@@ -1,0 +1,206 @@
+.startScreen {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 50% 50%;
+      grid-template-rows: 50% 50%;
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.startScreen .startButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70% 30%;
+      grid-template-rows: 70% 30%;
+  -webkit-box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+.startScreen .startButton .startImg {
+  width: auto;
+  height: 80%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.startScreen .startButton .startTitle {
+  margin-top: 5%;
+  color: white;
+  text-align: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.startScreen .fun {
+  background: #2736C2;
+}
+
+.startScreen .comp {
+  background: #282828;
+}
+
+.splashScreen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.splashScreen .funSplash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  justify-self: flex-start;
+  width: 100%;
+  height: 100%;
+  bottom: 50%;
+  -webkit-box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+  background: #2736C2;
+  -webkit-animation: 2s ease 0s forwards 1 funMode;
+          animation: 2s ease 0s forwards 1 funMode;
+}
+
+.splashScreen .funSplash .splashTitle {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: white;
+  text-align: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.splashScreen .funSplash .splashSubtitle {
+  opacity: 0;
+  margin-bottom: 200px;
+  color: white;
+  text-align: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 22px;
+  font-weight: 500;
+  -webkit-animation: 4s ease 0s forwards 1 makeVisible;
+          animation: 4s ease 0s forwards 1 makeVisible;
+}
+
+.splashScreen .compSplash {
+  position: absolute;
+  justify-self: flex-end;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  -webkit-box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+  background: #282828;
+  -webkit-animation: 2s ease 0s forwards 1 compMode;
+          animation: 2s ease 0s forwards 1 compMode;
+}
+
+@-webkit-keyframes funMode {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 0%;
+  }
+}
+
+@keyframes funMode {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    bottom: 50%;
+  }
+  100% {
+    bottom: 0%;
+  }
+}
+
+@-webkit-keyframes compMode {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@keyframes compMode {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@-webkit-keyframes makeVisible {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes makeVisible {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=startscreen.css.map */

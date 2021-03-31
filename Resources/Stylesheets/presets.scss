@@ -1,0 +1,9 @@
+@mixin centerObj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin stackTop{
+    z-index: 9;
+}

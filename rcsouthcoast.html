@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCSouthCoast</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="resources/Stylesheets/reset.css">
+    <link rel="stylesheet" href="resources/Stylesheets/startscreen.css">
+</head>
+
+<body>
+    <div class="startScreen">
+        <div class="startButton fun" onclick="start(this, startScreen)">
+            <img class="startImg" src="Resources/Assets/ico3.png" />
+            <h class="startTitle">I'M PLAYING FOR FUN</h>
+        </div>
+        <div class="startButton comp" onclick="start(this, startScreen)">
+            <img class="startImg" src="Resources/Assets/ico1.png" />
+            <h class="startTitle">COMPETITION MODE</h>
+        </div>
+    </div>
+    <div class="splashScreen" style="display: none">
+        <div class="funSplash" style="display: none">
+            <h class="splashTitle">FUN MODE</h>
+            <h class="splashSubtitle">No scale points, no stakes, no consequences.</h>
+        </div>
+        <div class="compSplash" style="display: none"></div>
+    </div>
+    <div class="mainScreen" style="display: none">
+        <div class="funScreen" style="display: none"></div>
+        <div class="compScreen" style="display: none"></div>
+    </div>
+
+    <script src="resources/Scripts/rcsouthcoast.js"></script>
+    <script>
+    function start(targetButton, allButtons){
+        console.log(allButtons);
+        allButtons.setAttribute('style', 'pointer-events: none');
+        document.querySelector('.splashScreen').setAttribute('style', 'display: inherit;')
+        document.querySelector('.mainScreen').setAttribute('style', 'display: inherit;')
+        if (targetButton.classList.contains("comp")) {
+            compSplash.setAttribute('style', 'display: grid');
+            compScreen.setAttribute('style', 'display: grid');
+        }
+        else {
+            funSplash.setAttribute('style', 'display: grid');
+            funScreen.setAttribute('style', 'display: grid');
+        }
+        //setTimeout(allButtons.setAttribute('style', 'display: none'), 1000);
+    }
+    </script>
+</body>
+
+</html>

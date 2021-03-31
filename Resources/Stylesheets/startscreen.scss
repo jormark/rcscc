@@ -1,0 +1,143 @@
+@import "presets";
+@import "variables";
+
+.startScreen {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    .startButton {
+        @include centerObj;
+        display: grid;
+        grid-template-rows: 70% 30%;
+        box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+
+        .startImg {
+            width: auto;
+            height: 80%;
+            align-self: flex-end;
+            justify-self: center;
+        }
+
+        .startTitle {
+            margin-top: 5%;
+            color: white;
+            text-align: center;
+            align-self: flex-start;
+            justify-self: center;
+            font-size: 28px;
+            font-weight: 500;
+        }
+    }
+
+    .fun {
+        background: $rcBlue;
+    }
+
+    .comp {
+        background: $rcBlack;
+    }
+}
+
+.splashScreen {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+    overflow: hidden;
+
+    .funSplash {
+        @include centerObj;
+        position: absolute;
+        justify-self: flex-start;
+        width: 100%;
+        height: 100%;
+        bottom: 50%;
+        box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+        background: $rcBlue;
+        animation: 2s ease 0s forwards 1 funMode;
+
+        .splashTitle {
+            align-self: flex-end;
+            color: white;
+            text-align: center;
+            justify-self: center;
+            font-size: 36px;
+            font-weight: 500;
+        }
+
+        .splashSubtitle {
+            opacity: 0;
+            margin-bottom: 200px;
+            color: white;
+            text-align: center;
+            justify-self: center;
+            font-size: 22px;
+            font-weight: 500;
+            animation: 4s ease 0s forwards 1 makeVisible;
+        }
+    }
+
+    .compSplash {
+        position: absolute;
+        justify-self: flex-end;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
+        background: $rcBlack;
+        animation: 2s ease 0s forwards 1 compMode;
+    }
+}
+
+@keyframes funMode {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        bottom: 50%;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+}
+
+@keyframes compMode {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        top: 50%;
+    }
+
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes makeVisible {
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
