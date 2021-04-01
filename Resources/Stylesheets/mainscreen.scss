@@ -1,61 +1,383 @@
+@import "presets";
+@import "variables";
+
 .mainScreen {
+    @include centerObj;
     width: 100vw;
     height: 100vh;
     position: absolute;
     z-index: 3;
-    overflow: hidden;
+    overflow: scroll;
 
     .funScreen {
         @include centerObj;
         position: absolute;
-        width: 0%;
-        height: 0%;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
         background: white;
-        animation: 8s ease 0s forwards 1 expand;
+        animation: 4s ease 0s forwards 1 expand;
 
-        .splashTitle {
-            align-self: flex-end;
-            color: white;
-            text-align: center;
-            justify-self: center;
-            font-size: 36px;
-            font-weight: 500;
+        .scoreCard {
+            color: $rcBlack;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 30% auto;
+
+            .scoreArea {
+                display: flex;
+                justify-content: center;
+                background: $rcGrey;
+                display: grid;
+                grid-template-rows: 30% 70%;
+                width: 100vw;
+                height: 100%;
+
+                .scoreTitle {
+                    align-self: flex-end;
+                    text-align: center;
+                    justify-self: center;
+                    font-size: 28px;
+                    font-weight: 500;
+                }
+
+                .score {
+                    align-self: flex-start;
+                    text-align: center;
+                    justify-self: center;
+                    font-size: 120px;
+                    font-weight: 500;
+                }
+            }
+
+            .scorePoints {
+                background: white;
+                width: 100vw;
+
+                .smallScoreArea {
+                    display: grid;
+                    position: sticky;
+                    top: 0;
+                    z-index: 4;
+                    grid-template-columns: 1fr 1fr;
+                    background: $rcLightGrey;
+                    width: 100vw;
+                    height: 60px;
+
+                    .scoreTitle {
+                        display: flex;
+                        justify-self: flex-start;
+                        align-self: center;
+                        margin-left: 20px;
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+
+                    .score {
+                        display: flex;
+                        justify-self: flex-end;
+                        align-self: center;
+                        margin-right: 20px;
+                        font-size: 20px;
+                        font-weight: 400;
+                    }
+                }
+
+                .pointRow {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    background: white;
+                    width: 100vw;
+                    height: 60px;
+                    border-bottom: 4px solid $rcLightGrey;
+
+                    .pointType {
+                        display: flex;
+                        justify-self: flex-start;
+                        align-self: center;
+                        margin-left: 20px;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+
+                    .changePoints {
+                        display: flex;
+                        justify-self: flex-end;
+                        align-self: center;
+                        margin-right: 5px;
+
+                        .addPoint {
+                            @include centerObj;
+                            border-radius: 1000px;
+                            width: 50px;
+                            height: 50px;
+                            font-size: 26px;
+                            font-weight: 700;
+                            transition: background-color 0.2s ease;
+                        }
+
+                        .addPoint:active {
+                            background-color: $rcGrey;
+                        }
+
+                        .deductPoint {
+                            @include centerObj;
+                            border-radius: 1000px;
+                            width: 50px;
+                            height: 50px;
+                            font-size: 26px;
+                            font-weight: 700;
+                            transition: background-color 0.2s ease;
+                        }
+
+                        .deductPoint:active {
+                            background-color: $rcGrey;
+                        }
+
+                        .resetPoints {
+                            @include centerObj;
+                            border-radius: 1000px;
+                            width: 50px;
+                            height: 50px;
+                            font-size: 20px;
+                            font-weight: 700;
+                            margin-right: 10px;
+                            transition: background-color 0.2s ease;
+                        }
+
+                        .resetPoints:active {
+                            background-color: $rcGrey;
+                        }
+                    }
+                }
+
+                .filler {
+                    width: 100vw;
+                    height: 140px;
+                }
+            }
         }
 
-        .splashSubtitle {
-            opacity: 0;
-            margin-bottom: 200px;
-            color: white;
-            text-align: center;
-            justify-self: center;
-            font-size: 22px;
-            font-weight: 500;
-            animation: 4s ease 0s forwards 1 makeVisible;
+        .footer {
+            position: fixed;
+            z-index: 4;
+            height: 60px;
+            width: 100vw;
+            bottom: 0;
+            background-color: $rcBlue;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+
+            .fButton {
+                @include centerObj;
+                color: white;
+                width: 100%;
+                height: 100%;
+                transition: background-color 0.2s ease;
+                .material-icons {
+                    font-size: 30px;
+                }
+            }
+
+            .active {
+                background-color: $hoverBlue;
+            }
         }
     }
 
-    .compMain {
+    .compScreen {
+        @include centerObj;
         position: absolute;
-        justify-self: flex-end;
+        opacity: 0;
         width: 100%;
         height: 100%;
-        top: 50%;
-        box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
-        background: $rcBlack;
-        animation: 2s ease 0s forwards 1 compMode;
+        background: white;
+        animation: 4s ease 0s forwards 1 expand;
+
+        .scoreCard {
+            color: $rcBlack;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 30% auto;
+
+            .scoreArea {
+                display: flex;
+                justify-content: center;
+                background: $rcGrey;
+                display: grid;
+                grid-template-rows: 30% 70%;
+                width: 100vw;
+                height: 100%;
+
+                .scoreTitle {
+                    align-self: flex-end;
+                    text-align: center;
+                    justify-self: center;
+                    font-size: 28px;
+                    font-weight: 500;
+                }
+
+                .score {
+                    align-self: flex-start;
+                    text-align: center;
+                    justify-self: center;
+                    font-size: 120px;
+                    font-weight: 500;
+                }
+            }
+
+            .scorePoints {
+                background: white;
+                width: 100vw;
+
+                .smallScoreArea {
+                    display: grid;
+                    position: sticky;
+                    top: 0;
+                    z-index: 4;
+                    grid-template-columns: 1fr 1fr;
+                    background: $rcLightGrey;
+                    width: 100vw;
+                    height: 60px;
+
+                    .scoreTitle {
+                        display: flex;
+                        justify-self: flex-start;
+                        align-self: center;
+                        margin-left: 20px;
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+
+                    .score {
+                        display: flex;
+                        justify-self: flex-end;
+                        align-self: center;
+                        margin-right: 20px;
+                        font-size: 20px;
+                        font-weight: 400;
+                    }
+                }
+
+                .pointRow {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    background: white;
+                    width: 100vw;
+                    height: 60px;
+                    border-bottom: 4px solid $rcLightGrey;
+
+                    .pointType {
+                        display: flex;
+                        justify-self: flex-start;
+                        align-self: center;
+                        margin-left: 20px;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+
+                    .changePoints {
+                        display: flex;
+                        justify-self: flex-end;
+                        align-self: center;
+                        margin-right: 5px;
+
+                        .addPoint {
+                            @include centerObj;
+                            border-radius: 1000px;
+                            width: 50px;
+                            height: 50px;
+                            font-size: 26px;
+                            font-weight: 700;
+                            transition: background-color 0.2s ease;
+                        }
+
+                        .addPoint:active {
+                            background-color: $rcGrey;
+                        }
+
+                        .deductPoint {
+                            @include centerObj;
+                            border-radius: 1000px;
+                            width: 50px;
+                            height: 50px;
+                            font-size: 26px;
+                            font-weight: 700;
+                            transition: background-color 0.2s ease;
+                        }
+
+                        .deductPoint:active {
+                            background-color: $rcGrey;
+                        }
+
+                        .resetPoints {
+                            @include centerObj;
+                            border-radius: 1000px;
+                            width: 50px;
+                            height: 50px;
+                            font-size: 20px;
+                            font-weight: 700;
+                            margin-right: 10px;
+                            transition: background-color 0.2s ease;
+                        }
+
+                        .resetPoints:active {
+                            background-color: $rcGrey;
+                        }
+                    }
+                }
+
+                .filler {
+                    width: 100vw;
+                    height: 140px;
+                }
+            }
+        }
+
+        .footer {
+            position: fixed;
+            z-index: 4;
+            height: 60px;
+            width: 100vw;
+            bottom: 0;
+            background-color: $rcRed;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+
+            .fButton {
+                @include centerObj;
+                color: white;
+                width: 100%;
+                height: 100%;
+                transition: background-color 0.2s ease;
+                .material-icons {
+                    font-size: 30px;
+                }
+            }
+
+            .active {
+                background-color: $hoverRed;
+            }
+        }
     }
 }
 
 @keyframes expand {
+    50% {
+        opacity: 0;
+    }
+
     75% {
-        width: 0%;
-        height: 0%;
-        border-radius: 1000px;
+        opacity: 1;
+        clip-path: circle(0%);
     }
 
     100% {
-        width: 100%;
-        height: 100%;
-        border-radius: 0px;
+        opacity: 1;
+        clip-path: circle(200%);
     }
 }

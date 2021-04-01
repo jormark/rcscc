@@ -41,7 +41,7 @@
     }
 
     .comp {
-        background: $rcBlack;
+        background: $rcRed;
     }
 }
 
@@ -64,12 +64,14 @@
         animation: 2s ease 0s forwards 1 funMode;
 
         .splashTitle {
+            opacity: 0;
             align-self: flex-end;
             color: white;
             text-align: center;
             justify-self: center;
-            font-size: 36px;
+            font-size: 40px;
             font-weight: 500;
+            animation: 2s ease 0s forwards 1 makeVisible;
         }
 
         .splashSubtitle {
@@ -80,19 +82,42 @@
             justify-self: center;
             font-size: 22px;
             font-weight: 500;
-            animation: 4s ease 0s forwards 1 makeVisible;
+            animation: 2s ease 0s forwards 1 makeVisible;
         }
     }
 
     .compSplash {
+        @include centerObj;
         position: absolute;
         justify-self: flex-end;
         width: 100%;
         height: 100%;
         top: 50%;
         box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
-        background: $rcBlack;
+        background: $rcRed;
         animation: 2s ease 0s forwards 1 compMode;
+
+        .splashTitle {
+            opacity: 0;
+            align-self: flex-end;
+            color: white;
+            text-align: center;
+            justify-self: center;
+            font-size: 40px;
+            font-weight: 500;
+            animation: 2s ease 0s forwards 1 makeVisible;
+        }
+
+        .splashSubtitle {
+            opacity: 0;
+            margin-bottom: 200px;
+            color: white;
+            text-align: center;
+            justify-self: center;
+            font-size: 22px;
+            font-weight: 500;
+            animation: 2s ease 0s forwards 1 makeVisible;
+        }
     }
 }
 

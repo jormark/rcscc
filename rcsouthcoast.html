@@ -9,8 +9,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="resources/Stylesheets/reset.css">
     <link rel="stylesheet" href="resources/Stylesheets/startscreen.css">
+    <link rel="stylesheet" href="resources/Stylesheets/mainscreen.css">
 </head>
 
 <body>
@@ -29,30 +31,308 @@
             <h class="splashTitle">FUN MODE</h>
             <h class="splashSubtitle">No scale points, no stakes, no consequences.</h>
         </div>
-        <div class="compSplash" style="display: none"></div>
+        <div class="compSplash" style="display: none">
+            <h class="splashTitle">COMPETITION MODE</h>
+            <h class="splashSubtitle">This would be where you enter tournament details.</h>
+        </div>
     </div>
     <div class="mainScreen" style="display: none">
-        <div class="funScreen" style="display: none"></div>
-        <div class="compScreen" style="display: none"></div>
+        <div class="funScreen" style="display: none">
+            <div class="scoreCard">
+                <div class="scoreArea">
+                    <h class="scoreTitle">POINTS</h>
+                    <h class="score">0</h>
+                </div>
+                <div class="scorePoints">
+                    <div class="smallScoreArea">
+                        <h class="scoreTitle">POINTS</h>
+                        <h class="score">0</h>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Reverse (+0)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(0)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(0)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Hit gate marker (+10)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(10)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(10)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Rollover (+5)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(5)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(5)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Boundary (+5)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(5)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(5)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Vehicle touch (reposition) (+5)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(5)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(5)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Use of winch (+1)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(1)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(1)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Did not finish (HS - progress +10)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(100)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(100)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Did not finish (HS+20)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(120)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(120)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Reset points</h>
+                        <div class="changePoints">
+                            <div class="resetPoints" onclick="resetPoints()">T_T</div>
+                        </div>
+                    </div>
+                    <div class="filler">
+                    </div>
+                    <div class="filler">
+                    </div>
+                    <div class="filler">
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <h class="fButton active" onclick="menuSwitcher(scoreCard, this)">
+                    <span class="material-icons">
+                        sports_score
+                    </span>
+                </h>
+                <h class="fButton" onclick="menuSwitcher(scoreCard, this)">
+                    <span class="material-icons">
+                        settings
+                    </span>
+                </h>
+            </div>
+        </div>
+        <div class="compScreen" style="display: none">
+            <div class="scoreCard">
+                <div class="scoreArea">
+                    <h class="scoreTitle">POINTS</h>
+                    <h class="score">0</h>
+                </div>
+                <div class="scorePoints">
+                    <div class="smallScoreArea">
+                        <h class="scoreTitle">POINTS</h>
+                        <h class="score">0</h>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Reverse (+0)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(0)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(0)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Hit gate marker (+10)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(10)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(10)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Rollover (+5)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(5)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(5)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Boundary (+5)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(5)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(5)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Vehicle touch (reposition) (+5)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(5)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(5)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Use of winch (+1)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(1)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(1)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Did not finish (HS - progress +10)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(100)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(100)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Did not finish (HS+20)</h>
+                        <div class="changePoints">
+                            <div class="deductPoint" onclick="deductPoint(120)">
+                                <h>-</h>
+                            </div>
+                            <div class="addPoint" onclick="addPoint(120)">
+                                <h>+</h>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pointRow">
+                        <h class="pointType">Reset points</h>
+                        <div class="changePoints">
+                            <div class="resetPoints" onclick="resetPoints()">T_T</div>
+                        </div>
+                    </div>
+                    <div class="filler">
+                    </div>
+                    <div class="filler">
+                    </div>
+                    <div class="filler">
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <h class="fButton active" onclick="menuSwitcher(scoreCard, this)">
+                    <span class="material-icons">
+                        sports_score
+                    </span>
+                </h>
+                <h class="fButton" onclick="menuSwitcher(scoreCard, this)">
+                    <span class="material-icons">
+                        assessment
+                    </span>
+                </h>
+                <h class="fButton" onclick="menuSwitcher(scoreCard, this)">
+                    <span class="material-icons">
+                        settings
+                    </span>
+                </h>
+            </div>
+        </div>
     </div>
 
     <script src="resources/Scripts/rcsouthcoast.js"></script>
     <script>
-    function start(targetButton, allButtons){
-        console.log(allButtons);
-        allButtons.setAttribute('style', 'pointer-events: none');
-        document.querySelector('.splashScreen').setAttribute('style', 'display: inherit;')
-        document.querySelector('.mainScreen').setAttribute('style', 'display: inherit;')
-        if (targetButton.classList.contains("comp")) {
-            compSplash.setAttribute('style', 'display: grid');
-            compScreen.setAttribute('style', 'display: grid');
+        function start(targetButton, allButtons) {
+            console.log(allButtons);
+            allButtons.setAttribute('style', 'pointer-events: none');
+            document.querySelector('.splashScreen').setAttribute('style', 'display: inherit;')
+            document.querySelector('.mainScreen').setAttribute('style', 'display: inherit;')
+            if (targetButton.classList.contains("comp")) {
+                compSplash.setAttribute('style', 'display: grid');
+                compScreen.setAttribute('style', 'display: grid');
+            }
+            else {
+                funSplash.setAttribute('style', 'display: grid');
+                funScreen.setAttribute('style', 'display: grid');
+            }
+            //setTimeout(allButtons.setAttribute('style', 'display: none'), 1000);
         }
-        else {
-            funSplash.setAttribute('style', 'display: grid');
-            funScreen.setAttribute('style', 'display: grid');
+
+        function menuSwitcher(target, thisButton) {
+            document.querySelector('.active').setAttribute('class', 'fButton');
+            thisButton.setAttribute('class', 'fButton active');
         }
-        //setTimeout(allButtons.setAttribute('style', 'display: none'), 1000);
-    }
+
+        function deductPoint(deductBy) {
+            score -= deductBy;
+            changeScore();
+        }
+
+        function addPoint(addBy) {
+            score += addBy;
+            changeScore();
+        }
+
+        function resetPoints() {
+            score = 0;
+            changeScore();
+        }
     </script>
 </body>
 

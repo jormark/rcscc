@@ -56,7 +56,7 @@
 }
 
 .startScreen .comp {
-  background: #282828;
+  background: #D61538;
 }
 
 .splashScreen {
@@ -90,14 +90,17 @@
 }
 
 .splashScreen .funSplash .splashTitle {
+  opacity: 0;
   -ms-flex-item-align: end;
       align-self: flex-end;
   color: white;
   text-align: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 500;
+  -webkit-animation: 2s ease 0s forwards 1 makeVisible;
+          animation: 2s ease 0s forwards 1 makeVisible;
 }
 
 .splashScreen .funSplash .splashSubtitle {
@@ -109,11 +112,20 @@
       justify-self: center;
   font-size: 22px;
   font-weight: 500;
-  -webkit-animation: 4s ease 0s forwards 1 makeVisible;
-          animation: 4s ease 0s forwards 1 makeVisible;
+  -webkit-animation: 2s ease 0s forwards 1 makeVisible;
+          animation: 2s ease 0s forwards 1 makeVisible;
 }
 
 .splashScreen .compSplash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
   justify-self: flex-end;
   width: 100%;
@@ -121,9 +133,36 @@
   top: 50%;
   -webkit-box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
           box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.3);
-  background: #282828;
+  background: #D61538;
   -webkit-animation: 2s ease 0s forwards 1 compMode;
           animation: 2s ease 0s forwards 1 compMode;
+}
+
+.splashScreen .compSplash .splashTitle {
+  opacity: 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  color: white;
+  text-align: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 40px;
+  font-weight: 500;
+  -webkit-animation: 2s ease 0s forwards 1 makeVisible;
+          animation: 2s ease 0s forwards 1 makeVisible;
+}
+
+.splashScreen .compSplash .splashSubtitle {
+  opacity: 0;
+  margin-bottom: 200px;
+  color: white;
+  text-align: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 22px;
+  font-weight: 500;
+  -webkit-animation: 2s ease 0s forwards 1 makeVisible;
+          animation: 2s ease 0s forwards 1 makeVisible;
 }
 
 @-webkit-keyframes funMode {
