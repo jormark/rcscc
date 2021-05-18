@@ -29,11 +29,11 @@
     <div class="splashScreen" style="display: none">
         <div class="funSplash" style="display: none">
             <h class="splashTitle">FUN MODE</h>
-            <h class="splashSubtitle">No scale points, no stakes, no consequences.</h>
+            <h class="splashSubtitle">No stakes, no consequences.</h>
         </div>
         <div class="compSplash" style="display: none">
             <h class="splashTitle">COMPETITION MODE</h>
-            <h class="splashSubtitle">This would be where you enter tournament details.</h>
+            <h class="splashSubtitle compTitle"></h>
         </div>
     </div>
     <div class="mainScreen" style="display: none">
@@ -48,137 +48,37 @@
                         <h class="scoreTitle">POINTS</h>
                         <h class="score">0</h>
                     </div>
-                    <div class="pointRow">
-                        <h class="pointType">Progress (-2)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('progress')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('progress')">
-                                <h>+</h>
-                            </div>
+                </div>
+            </div>
+            <div class="settings" style="display: none">
+                <h class="settingsTitle">SETTINGS</h>
+                <div class="settingRow">
+                    <h class="settingName">Current Ruleset:</h>
+                    <div class="changeSetting">
+                        <div class="toggleRuleset" onclick="toggleRuleset()">
+                            <h>Toggle</h>
                         </div>
                     </div>
-                    <div class="pointRow">
-                        <h class="pointType">Reverse (+0)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('reverse')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('reverse')">
-                                <h>+</h>
-                            </div>
+                </div>
+                <div class="settingRowName">
+                    <h class="settingName">Sorrca</h>
+                </div>
+                <div class="settingRow">
+                    <h class="settingName">Reset to defaults</h>
+                    <div class="changeSetting">
+                        <div class="toggleRuleset" onclick="resetPoints()">
+                            <h>Reset</h>
                         </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Hit gate marker (+10)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('hitGate')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('hitGate')">
-                                <h>+</h>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Rollover (+5)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('rollover')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('rollover')">
-                                <h>+</h>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Boundary (+5)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('boundary')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('boundary')">
-                                <h>+</h>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Vehicle touch (reposition) (+5)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('vehicleTouch')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('vehicleTouch')">
-                                <h>+</h>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Use of winch (+1)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('winch')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('winch')">
-                                <h>+</h>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Hand winch (+5)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('handWinch')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('handWinch')">
-                                <h>+</h>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Did not finish (HS - progress +10)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('dnf')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('dnf')">
-                                <h>+</h>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Did not start (HS+20)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('dns')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('dns')">
-                                <h>+</h>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pointRow">
-                        <h class="pointType">Reset points</h>
-                        <div class="changePoints">
-                            <div class="resetPoints" onclick="resetPoints()">T_T</div>
-                        </div>
-                    </div>
-                    <div class="filler">
-                    </div>
-                    <div class="filler">
-                    </div>
-                    <div class="filler">
                     </div>
                 </div>
             </div>
             <div class="footer">
-                <h class="fButton active" onclick="menuSwitcher(scoreCard, this)">
+                <h class="fButton active" onclick="menuSwitcher('scoreCard', this)">
                     <span class="material-icons">
                         sports_score
                     </span>
                 </h>
-                <h class="fButton" onclick="menuSwitcher(scoreCard, this)">
+                <h class="fButton" onclick="menuSwitcher('settings', this)">
                     <span class="material-icons">
                         settings
                     </span>
@@ -196,43 +96,42 @@
                         <h class="scoreTitle">POINTS</h>
                         <h class="score">0</h>
                     </div>
-                    <div class="pointRow">
-                        <h class="pointType">Did not start (HS+20)</h>
-                        <div class="changePoints">
-                            <div class="deductPoint" onclick="deductPoint('dns')">
-                                <h>-</h>
-                            </div>
-                            <div class="addPoint" onclick="addPoint('dns')">
-                                <h>+</h>
-                            </div>
+                </div>
+            </div>
+            <div class="settings" style="display: none">
+                <h class="settingsTitle">SETTINGS</h>
+                <div class="settingRow">
+                    <h class="settingName">Current Ruleset:</h>
+                    <div class="changeSetting">
+                        <div class="toggleRuleset" onclick="toggleRuleset()">
+                            <h>Toggle</h>
                         </div>
                     </div>
-                    <div class="pointRow">
-                        <h class="pointType">Reset points</h>
-                        <div class="changePoints">
-                            <div class="resetPoints" onclick="resetPoints()">T_T</div>
+                </div>
+                <div class="settingRowName">
+                    <h class="settingName">Sorrca</h>
+                </div>
+                <div class="settingRow">
+                    <h class="settingName">Reset to defaults</h>
+                    <div class="changeSetting">
+                        <div class="toggleRuleset" onclick="resetPoints()">
+                            <h>Reset</h>
                         </div>
-                    </div>
-                    <div class="filler">
-                    </div>
-                    <div class="filler">
-                    </div>
-                    <div class="filler">
                     </div>
                 </div>
             </div>
             <div class="footer">
-                <h class="fButton active" onclick="menuSwitcher(scoreCard, this)">
+                <h class="fButton active" onclick="menuSwitcher('scoreCard', this)">
                     <span class="material-icons">
                         sports_score
                     </span>
                 </h>
-                <h class="fButton" onclick="menuSwitcher(scoreCard, this)">
+                <h class="fButton" onclick="menuSwitcher('scoreCard', this)">
                     <span class="material-icons">
                         assessment
                     </span>
                 </h>
-                <h class="fButton" onclick="menuSwitcher(scoreCard, this)">
+                <h class="fButton" onclick="menuSwitcher('settings', this)">
                     <span class="material-icons">
                         settings
                     </span>
@@ -243,12 +142,21 @@
 
     <script src="resources/Scripts/rcsouthcoast.js"></script>
     <script>
+        var competitionPhrases = [
+            'The only place I know is <i>1st</i>.',
+            '"Slow and steady"? More like "<i>Fast and very very unsteady</i>".',
+            'AAAAAAAAAAAAAAAAAAA',
+            "For the ones who just can't let go.",
+            'Be sure the only thing your rivals take home is the "L".'
+        ];
+
         function start(targetButton, allButtons) {
-            console.log(allButtons);
+            var phrase = competitionPhrases[Math.floor(Math.random() * competitionPhrases.length)];
             allButtons.setAttribute('style', 'pointer-events: none');
             document.querySelector('.splashScreen').setAttribute('style', 'display: inherit;')
             document.querySelector('.mainScreen').setAttribute('style', 'display: inherit;')
             if (targetButton.classList.contains("comp")) {
+                document.querySelector('.compTitle').innerHTML = phrase;
                 compSplash.setAttribute('style', 'display: grid');
                 compScreen.setAttribute('style', 'display: grid');
             }
@@ -262,6 +170,31 @@
         function menuSwitcher(target, thisButton) {
             document.querySelector('.active').setAttribute('class', 'fButton');
             thisButton.setAttribute('class', 'fButton active');
+            for (var v = 0; v < 2; v++) {
+                if (target == "settings") {
+                    settings[v].setAttribute('style', 'display: grid');
+                    scoreCard[v].setAttribute('style', 'display: none');
+                }
+                else if (target == "scoreCard") {
+                    scoreCard[v].setAttribute('style', 'display: grid');
+                    settings[v].setAttribute('style', 'display: none');
+                }
+            }
+        }
+
+        function toggleRuleset() {
+            if (liteRuleset.inUse == true) {
+                liteRuleset.inUse = false;
+                sorrcaRuleset.inUse = true;
+                generate();
+                console.log("Changed to: SORRCA");
+            }
+            else if (sorrcaRuleset.inUse == true) {
+                sorrcaRuleset.inUse = false;
+                liteRuleset.inUse = true;
+                generate();
+                console.log("Changed to: SORRCA Lite");
+            }
         }
 
         function resetPoints() {

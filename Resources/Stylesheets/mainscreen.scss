@@ -159,6 +159,69 @@
             }
         }
 
+        .settings {
+            color: $rcBlack;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 60px 60px 60px 60px;
+
+            .settingsTitle {
+                @include centerObj;
+                font-size: 20px;
+                font-weight: 500;
+                background: $rcGrey;
+                width: 100vw;
+                height: 100%;
+            }
+
+            .settingRow {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                background: white;
+                width: 100vw;
+                height: 60px;
+                border-bottom: 4px solid $rcLightGrey;
+
+                .settingName {
+                    display: flex;
+                    justify-self: flex-start;
+                    align-self: center;
+                    margin-left: 20px;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+
+                .changeSetting {
+                    display: flex;
+                    justify-self: flex-end;
+                    align-self: center;
+                    width: 100%;
+                    height: 100%;
+
+                    .toggleRuleset {
+                        @include centerObj;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $rcGrey;
+                        transition: background-color 0.2s ease;
+                        color: grey;
+                    }
+
+                    .toggleRuleset:active {
+                        background-color: #cecece;
+                    }
+                }
+            }
+
+            .settingRowName {
+                @include centerObj;
+                width: 100vw;
+                height: 60px;
+                border-bottom: 4px solid $rcLightGrey;
+            }
+        }
+
         .footer {
             position: fixed;
             z-index: 4;
@@ -334,6 +397,69 @@
                     width: 100vw;
                     height: 140px;
                 }
+            }
+        }
+
+        .settings {
+            color: $rcBlack;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-rows: 60px 60px 60px 60px;
+
+            .settingsTitle {
+                @include centerObj;
+                font-size: 20px;
+                font-weight: 500;
+                background: $rcGrey;
+                width: 100vw;
+                height: 100%;
+            }
+
+            .settingRow {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                background: white;
+                width: 100vw;
+                height: 60px;
+                border-bottom: 4px solid $rcLightGrey;
+
+                .settingName {
+                    display: flex;
+                    justify-self: flex-start;
+                    align-self: center;
+                    margin-left: 20px;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+
+                .changeSetting {
+                    display: flex;
+                    justify-self: flex-end;
+                    align-self: center;
+                    width: 100%;
+                    height: 100%;
+
+                    .toggleRuleset {
+                        @include centerObj;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $rcGrey;
+                        transition: background-color 0.2s ease;
+                        color: grey;
+                    }
+
+                    .toggleRuleset:active {
+                        background-color: #cecece;
+                    }
+                }
+            }
+
+            .settingRowName {
+                @include centerObj;
+                width: 100vw;
+                height: 60px;
+                border-bottom: 4px solid $rcLightGrey;
             }
         }
 
