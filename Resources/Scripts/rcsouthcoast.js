@@ -61,16 +61,6 @@ window.onload = function () {
     generate();
 }
 
-/**Currently, the program allows you to switch between SORRCA Lite and SORRCA. However, the 
- * old selection of scorecard buttons cannot be removed accurately without adjustments being made to the program.
- * 
- * These adjustments were unable to be added in time, but would have involved the deletion of old scorecards and subsequent replacement with the new/relevant scorecards
- * for the correct ruleset, allowing for the UI to update alongside the program.
- * 
- * The program behind the interface works as expected and allows the user to switch between rulesets - however, the interface is suffering with some techincal difficulties
- * in replacing the scorecards.
- */
-
 function generate() {
     if (liteRuleset.inUse == true) {
         rulesetInUse = liteRuleset;
@@ -80,6 +70,7 @@ function generate() {
     }
     var rowArea = document.querySelectorAll('.scorePoints');
     for (var n = 0; n < rowArea.length; n++) {
+        rowArea[n].innerHTML = '';
         for (var i in pointTypes) {
             var pointRow = document.createElement("div"),
                 pointType = document.createElement("h"),
